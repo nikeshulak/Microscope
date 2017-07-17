@@ -1,0 +1,17 @@
+<template name="postTripPage">
+  <div class="post-page page"><!-- postTrip-page -->
+    {{> postTripItem}}
+  
+    <ul class="itinerarys">
+      {{#each itinerarys}}
+        {{> itineraryItem}}
+      {{/each}}
+    </ul>
+  
+    <!-- {{#if currentUser}}
+      {{> itinerarySubmit}}
+    {{else}}
+      <p>Please log in to leave a itinerary.</p>
+    {{/if}} -->
+  </div>
+</template>

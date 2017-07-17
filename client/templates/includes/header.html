@@ -7,7 +7,15 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="{{pathFor 'home'}}">Microscope</a>
+      <a class="navbar-brand" href="{{pathFor 'home'}}">
+        <!-- Microscope -->
+        <!-- The third argument, `Microscope`, is the default value that will be shown if `mainPage.title` doesn't have a value set. -->
+        {{ dict 'mainPage.title' 'Microscope' }}
+
+        {{#if dict 'mainPage.description'}}
+         - {{{ dict 'mainPage.description' }}}
+        {{/if}}
+      </a>
     </div>
     <div class="collapse navbar-collapse" id="navigation">
       <ul class="nav navbar-nav">
@@ -17,6 +25,11 @@
         <li class="{{activeRouteClass  'bestPosts'}}">
           <a href="{{pathFor 'bestPosts'}}">Best</a>
         </li>
+
+        <li class="{{activeRouteClass  'trip'}}"><!-- postsTrip -->
+          <a href="{{pathFor 'trip'}}">Trip</a>
+        </li>
+
         {{#if currentUser}}
           <li class="{{activeRouteClass 'postSubmit'}}">
             <a href="{{pathFor 'postSubmit'}}">Submit Post</a>
@@ -31,4 +44,6 @@
       </ul>
     </div>
   </nav>
+
+  
 </template>

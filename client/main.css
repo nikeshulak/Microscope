@@ -19,6 +19,10 @@ body {
   top: 0px;
   width: 100%;
 }
+/* /submit - to see terms and condition */
+form.main.form.page {
+    position: static;
+}
 
 .navbar {
   margin-bottom: 10px; }
@@ -153,7 +157,7 @@ body {
   -webkit-animation: fadeOut 2700ms ease-in 0s 1 forwards;
      -moz-animation: fadeOut 2700ms ease-in 0s 1 forwards;
   width: 250px;
-  float: right;
+  /*float: right;*/
   clear: both;
   margin-bottom: 5px;
   pointer-events: auto;

@@ -3,13 +3,32 @@ if (Posts.find().count() === 0) {
   var now = new Date().getTime();
   
   // create two users
-  var tomId = Meteor.users.insert({
+  /*var tomId = Meteor.users.insert({
     profile: { name: 'Tom Coleman' }
+  });*/
+  var sachaId = Accounts.createUser({
+    profile: {
+      name: 'Sacha Greif'
+    },
+    username: "sacha",
+    email: "sacha@example.com",
+    password: "123456",
   });
-  var tom = Meteor.users.findOne(tomId);
-  var sachaId = Meteor.users.insert({
+
+  var tomId = Accounts.createUser({
+    profile: {
+      name: 'Tom Coleman'
+    },
+    username: "tom",
+    email: "tom@example.com",
+    password: "123456",
+  });
+
+  
+  /*var sachaId = Meteor.users.insert({
     profile: { name: 'Sacha Greif' }
-  });
+  });*/
+  var tom = Meteor.users.findOne(tomId);
   var sacha = Meteor.users.findOne(sachaId);
   
   var telescopeId = Posts.insert({
